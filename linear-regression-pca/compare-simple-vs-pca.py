@@ -34,26 +34,13 @@ def get_pca2_accuracy(X, y):
 
 
 
-# # Выводим диаграмму PCA с размерностью 2
-# plot_lr_pca(
-#     X=file[['yr','season', 'temp', 'windspeed(ms)']],
-#     y=file[['cnt']]
-# ).show()
 
-# # Находим признак с наибольшим абсолютным коэффициентом
-# most_infl_feature = search_most_infl_feature(
-#     X=file.drop(columns=['cnt']),
-#     y=file[['cnt']],
-#     alpha=0.1
-# )
-# print(most_infl_feature)
-
-# # Вычисляем точность модели простой линейной регрессии
-# lr_simple_accuracy = get_lr_simple_accuracy(
-#     X=file[['yr','season', 'temp', ]],
-#     y=file[['cnt']]
-# )
-# print(f"lr_simple_accuracy: {lr_simple_accuracy}")
+# Вычисляем точность модели простой линейной регрессии
+lr_simple_accuracy = get_lr_simple_accuracy(
+    X=file[['yr','season', 'temp', ]],
+    y=file[['cnt']]
+)
+print(f"lr_simple_accuracy: {lr_simple_accuracy}")
 
 # Вычисляем точность модели PCA с размерностью пространства 2
 lr_pca_accuracy = get_pca2_accuracy(

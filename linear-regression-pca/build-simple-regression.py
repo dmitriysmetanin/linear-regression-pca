@@ -12,7 +12,6 @@ cnt = file['cnt']
 def plot_lr(weathersit, cnt):
     model = LinearRegression()
     model.fit(weathersit.values.reshape(-1, 1), cnt)
-    print(f"Coefficients: {model.coef_}")
 
     predictions = model.predict(weathersit.values.reshape(-1, 1))
 
